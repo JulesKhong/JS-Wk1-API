@@ -10,10 +10,10 @@ $(document).ready(function(){
       var myTemp = new Temperature(response.main.temp);
       var unit = $('#unit').val();
       if (unit === "celsius") {
-        var temp = Math.floor(myTemp.celsius());
+        temp = Math.floor(myTemp.celsius());
       }
       else {
-        var temp = Math.floor(myTemp.fahrenheit());
+        temp = Math.floor(myTemp.fahrenheit());
       }
       $('.showTemperature').text("The temperature in " + city + " is " + temp + " degrees " + unit);
     });

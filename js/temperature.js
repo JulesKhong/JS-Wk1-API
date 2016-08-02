@@ -5,7 +5,6 @@ function Temperature(kelvin) {
 Temperature.prototype.celsius = function() {
   var temp = this.kelvin - 273.15;
   return temp;
-  debugger;
 };
 
 Temperature.prototype.fahrenheit = function () {
