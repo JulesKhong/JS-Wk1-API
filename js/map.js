@@ -11,12 +11,4 @@ Map.prototype.initMap = function initMap() {
   });
 }
 
-
-
-// Map.prototype.show = function() {
-//   $.get('https://maps.googleapis.com/maps/api/js?key=AIzaSyAGZqHCSiz3soGvUCJCZWtJ3gMC50fMuoU&callback=initMap').then(function(response) {
-//   })
-// }
-
-
 exports.mapModule = Map;
