@@ -1,0 +1,11 @@
+.each_bike {
+  margin: 2em;
+  border-radius: 2%;
+  border: 2px solid;
+  padding: 2em;
+
+}
+
+img {
+  width: 100%;
+}

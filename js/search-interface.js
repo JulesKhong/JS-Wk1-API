@@ -1,11 +1,11 @@
 var Search = require('./../js/search.js').searchModule;
 
-var displayResults = function(manufacturer, bikes) {
+var displayResults = function(manufacturer, results) {
   $('#searchCriteria').append("Bikes made by " + manufacturer + ":");
-  console.log(bikes.bikes);
-  // bikes.forEach(function(bike){
-  // $('.showResults').append("<li>" + bike + "</li>");
-  // });
+  console.log(results.bikes);
+  results.bikes.forEach(function(bike){
+  $('#showResults').append("<div class='col-sm-3 each_bike'><li>" + bike.title +"</li><img src=" + bike.thumb + "></div>");
+  });
 };
 
 $(document).ready( function() {
