@@ -11,4 +11,12 @@ Search.prototype.searchManufacturer = function(manu, displayResult) {
   });
 };
 
+Search.prototype.searchStolen = function(zip, radius, displayStolen) {
+  $.get('https://bikeindex.org:443/api/v2/bikes_search/stolen?page=1&proximity= '+ zip +'&proximity_square=' + radius).then( function(response) {
+    displayStolen(zip, radius, response);
+  }).fail(function(error) {
+    $('#showResults').text(error.responseJSON.message);
+  });
+};
+
 exports.searchModule = Search;

@@ -14,16 +14,28 @@
   </head>
   <body>
     <div class="container">
+      <h1>Bike resource</h1>
       <form id="search-man" class="form-group">
-        <label>Search By Manufacturer</label>
+        <label>Search for Bikes By Manufacturer</label>
         <input id="manufacturer" class="form-control" type="text">
-        <button name="submit" class="btn">Search</button>
+        <button name="submit" class="btn btn-default">Search</button>
       </form>
       <div class="row">
         <h3 id="searchCriteria"></h3>
         <ul id="showResults">
 
         </ul>
+      </div>
+
+      <div>
+        <h3>See Stolen Bikes In Your Area</h3>
+        <form id="search_stolen" class="form-group">
+          <label>Enter a Zip Code To search:</label>
+          <input id="zip" class="form-control" type="text">
+          <label>Enter a Search Radius:</label>
+          <input id="radius" class="form-control" type="text">
+          <button name="submit" class="btn btn-default">Search Area</button>
+        </form>
       </div>
 
     </div>
