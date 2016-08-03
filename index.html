@@ -9,51 +9,22 @@
     <link rel="stylesheet" href="build/css/vendor.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
-    <title>Wake up</title>
+    <title>Bike Search</title>
   </head>
   <body>
-    <div id="sound_element"></div>
     <div class="container">
-      <h1>Wake up, sunshine</h1>
-      <h3 id="time"></h3>
-      <h2>Alarm</h2>
-      <form class="form-group">
-        <label for="">Hour</label>
-        <select class="form-control" id="hour">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-        </select>
-        <select class="form-control" id="ampm">
-          <option value="AM">AM</option>
-          <option value="PM">PM</option>
-        </select>
-        <label for="">Minutes</label>
-        <select class="form-control" id="mins">
-          <option value="00">00</option>
-          <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="30">30</option>
-          <option value="40">40</option>
-          <option value="50">50</option>
-        </select>
-        <button type="submit" name="button" id="setbutton">Set</button>
+      <form id="search-man" class="form-group">
+        <label>Search By Manufacturer</label>
+        <input id="manufacturer" class="form-control" type="text">
+        <button name="submit" class="btn">Search</button>
       </form>
-      <div>
-        <ul id="showalarm">
+    </div>
+    <div>
+      <h3 id="searchCriteria"></h3>
+      <ul id="showResults">
 
-        </ul>
-      </div>
-      <a href="weather.html">Click for the weather...</a>
-  </div>
+      </ul>
+    </div>
+
   </body>
 </html>

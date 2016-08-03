@@ -1,9 +1,9 @@
 {
-  "name": "alarm",
+  "name": "API Bike",
   "description": "",
   "main": "gulpfile.js",
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/JuliaDickey/JS-Wk1-AlarmClock",
   "private": true,
   "ignore": [
     "**/.*",
