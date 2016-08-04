@@ -1,4 +1,5 @@
 var Search = require('./../js/search.js').searchModule;
+var Map = require('./../js/map.js').mapModule;
 
 var displayResults = function(manufacturer, results) {
   console.log(results.bikes);
@@ -41,6 +42,14 @@ $(document).ready( function() {
     newSearch.searchManufacturer(manu, displayResults);
     $('#map').append(newMap);
   });
+
+  $('#search-location').submit(function(event){
+    event.preventDefault();
+    var search = $('#current-location').val();
+    // var newMap = new Map();
+    newMap.initialize(search);
+  });
+
   $('#search_stolen').submit( function(event) {
     event.preventDefault();
     newArea = new Search();

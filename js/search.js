@@ -1,5 +1,5 @@
 var apiKey = require('./../.env').apiKey;
-
+var geoApi = require('./../.env').geoApi;
 function Search() {
 }
 
@@ -20,7 +20,7 @@ Search.prototype.searchStolen = function(zip, radius, displayStolen) {
   });
 };
 
-var page = 1
+var page = 1;
 
 Search.prototype.searchNext = function(zip, radius, displayStolen) {
   page += 1;
