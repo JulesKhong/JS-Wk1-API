@@ -1,25 +1,34 @@
 var Search = require('./../js/search.js').searchModule;
 
 var displayResults = function(manufacturer, results) {
-  $('#searchCriteria').text("Bikes made by " + manufacturer + ":");
   console.log(results.bikes);
   $('#showResults').empty();
   results.bikes.forEach(function(bike){
     if (bike.thumb){
       $('#showResults').append("<div class='col-sm-3 each_bike'><img src=" + bike.thumb + "><div class='li-div'><li>" + bike.title +"</li></div></div>");
     }
+    $('#searchCriteria').text("Bikes made by " + manufacturer + ":");
   });
 };
 
 var displayStolen = function(zip, radius, results) {
-  $('#searchCriteria').text('There are  ' + results.bikes.length + ' bikes stolen within ' + radius + ' miles of the zipcode ' + zip + '.');
   $('#showResults').empty();
   results.bikes.forEach(function(bike) {
     if (bike.thumb){
       $('#showResults').append("<div class='col-sm-3 each_bike'><img src=" + bike.thumb + "><div class='li-div'><li>" + bike.title +"</li></div></div>");
     }
+    $('#searchCriteria').text('There are  ' + results.bikes.length + ' bikes stolen within ' + radius + ' miles of the zipcode ' + zip + '.');
   });
 };
+
+// var displayNext = function() {
+//   $('#showResults').empty();
+//   results.bikes.forEach(function(bike) {
+//     if (bike.thumb){
+//       $('#showResults').append("<div class='col-sm-3 each_bike'><img src=" + bike.thumb + "><div class='li-div'><li>" + bike.title +"</li></div></div>");
+//     }
+//   });
+// };
 
 $(document).ready( function() {
 
@@ -38,5 +47,17 @@ $(document).ready( function() {
     var radius = parseInt($('#radius').val());
     var zip = parseInt($('#zip').val());
     newArea.searchStolen(zip, radius, displayStolen);
+    $('#next').show();
+    $('#next').click(function(event){
+      $('#previous').show();
+      event.preventDefault();
+      newSearch = new Search();
+      newSearch.searchNext(zip, radius, displayStolen);
+    });
+    $('#previous').click(function(event){
+      event.preventDefault();
+      newSearch = new Search();
+      newSearch.searchPrevious(zip, radius, displayStolen);
+    });
   });
 });

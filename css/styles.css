@@ -36,3 +36,9 @@ html, body {
 #map {
   height: 400px;
 }
+#next {
+  display: none;
+}
+#previous {
+  display: none;
+}
